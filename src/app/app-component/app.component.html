@@ -5,7 +5,10 @@
         <div class="container">
           <h2 class="py-5">{{ title }}</h2>
           <app-add></app-add>
-          <app-list [aptList]="theList"></app-list>
+          <app-list
+            [aptList]="theList"
+            (deleteEvt)="deleteApt($event)"
+          ></app-list>
           <app-search></app-search>
         </div>
       </div>
