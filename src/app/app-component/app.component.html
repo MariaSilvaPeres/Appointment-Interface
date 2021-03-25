@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-md-12 bg-white">
         <div class="container">
-          <app-add
-          (addEvt)="addApt($event)"
-        ></app-add>
-          <app-list
-            [aptList]="theList"
-            (deleteEvt)="deleteApt($event)"
-          ></app-list>
+          <app-add (addEvt)="addApt($event)"></app-add>
+          <!-- (queryEvt)="searchApt($event)" ; -->
           <app-search></app-search>
+          <app-list
+            [aptList]="modifiedList"
+            (deleteEvt)="deleteApt($event)"
+            (updateEvt)="updateApt($event)"
+          ></app-list>
         </div>
       </div>
       <!-- col-md-12 -->
