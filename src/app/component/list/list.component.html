@@ -13,7 +13,9 @@
     <div class="pet-info media-body">
       <div class="pet-head d-flex">
         <span class="pet-name" contenteditable="true">{{ item.petName }}</span>
-        <span class="apt-date ml-auto">{{ item.aptDate }}</span>
+        <span class="apt-date ml-auto">{{
+          item.aptDate | date: "d/M h:mm a"
+        }}</span>
       </div>
       <!-- pet-head -->
 
