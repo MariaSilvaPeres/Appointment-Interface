@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-md-12 bg-white">
         <div class="container">
-          <app-add></app-add>
+          <app-add
+          (addEvt)="addApt($event)"
+        ></app-add>
           <app-list
             [aptList]="theList"
             (deleteEvt)="deleteApt($event)"

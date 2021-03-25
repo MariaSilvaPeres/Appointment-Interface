@@ -1,4 +1,4 @@
-<div class="card textcenter mt-3" [ngClass]="{'add-appointment': showForm}">
+<div class="card textcenter mt-3" [ngClass]="{ 'add-appointment': showForm }">
   <div
     class="apt-addheading card-header bg-primary text-white"
     (click)="toggleAptDisplay()"
@@ -8,10 +8,11 @@
   <!-- card-header -->
 
   <div class="card-body">
-    <form id="aptForm" novalidate
-    (ngSubmit)="handleAdd()"
-    
-   
+    <form
+      id="aptForm"
+      novalidate
+      (ngSubmit)="handleAdd(aptForm.value)"
+      #aptForm="ngForm"
     >
       <div class="form-group form-row">
         <label class="col-md-2 col-form-label text-md-right" for="petName"
@@ -23,8 +24,9 @@
             class="form-control"
             name="petName"
             id="petName"
-            placeholder="Pet's Name" ngModel
-          >
+            placeholder="Pet's Name"
+            ngModel
+          />
         </div>
         <!-- col-md-10 -->
       </div>
@@ -40,8 +42,9 @@
             class="form-control"
             name="ownerName"
             id="ownerName"
-            placeholder="Owner's Name" ngModel
-          >
+            placeholder="Owner's Name"
+            ngModel
+          />
         </div>
         <!-- col-md-10 -->
       </div>
@@ -52,14 +55,26 @@
           >Date</label
         >
         <div class="col-md-4">
-          <input type="date" class="form-control" id="aptDate" name="aptDate" ngModel>
+          <input
+            type="date"
+            class="form-control"
+            id="aptDate"
+            name="aptDate"
+            ngModel
+          />
         </div>
         <!-- col-md-4 -->
         <label class="col-md-2 col-form-label text-md-right" for="aptTime"
           >Time</label
         >
         <div class="col-md-4">
-          <input type="time" class="form-control" name="aptTime" id="aptTime" ngModel>
+          <input
+            type="time"
+            class="form-control"
+            name="aptTime"
+            id="aptTime"
+            ngModel
+          />
         </div>
         <!-- col-md-4 -->
       </div>
@@ -74,7 +89,8 @@
             cols="50"
             name="aptNotes"
             id="aptNotes"
-            placeholder="Appointment Notes" ngModel
+            placeholder="Appointment Notes"
+            ngModel
           ></textarea>
         </div>
         <!-- col-md-10 -->
