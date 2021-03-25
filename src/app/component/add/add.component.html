@@ -1,11 +1,18 @@
-<div class="card textcenter mt-3">
-  <div class="apt-addheading card-header bg-primary text-white">
-    Add Appointment
+<div class="card textcenter mt-3" [ngClass]="{'add-appointment': showForm}">
+  <div
+    class="apt-addheading card-header bg-primary text-white"
+    (click)="toggleAptDisplay()"
+  >
+    <fa-icon icon="plus"></fa-icon> Add Appointment
   </div>
   <!-- card-header -->
 
   <div class="card-body">
-    <form id="aptForm" novalidate>
+    <form id="aptForm" novalidate
+    (ngSubmit)="handleAdd()"
+    
+   
+    >
       <div class="form-group form-row">
         <label class="col-md-2 col-form-label text-md-right" for="petName"
           >Pet Name</label
@@ -16,8 +23,8 @@
             class="form-control"
             name="petName"
             id="petName"
-            placeholder="Pet's Name"
-          />
+            placeholder="Pet's Name" ngModel
+          >
         </div>
         <!-- col-md-10 -->
       </div>
@@ -33,8 +40,8 @@
             class="form-control"
             name="ownerName"
             id="ownerName"
-            placeholder="Owner's Name"
-          />
+            placeholder="Owner's Name" ngModel
+          >
         </div>
         <!-- col-md-10 -->
       </div>
@@ -45,14 +52,14 @@
           >Date</label
         >
         <div class="col-md-4">
-          <input type="date" class="form-control" id="aptDate" name="aptDate" />
+          <input type="date" class="form-control" id="aptDate" name="aptDate" ngModel>
         </div>
         <!-- col-md-4 -->
         <label class="col-md-2 col-form-label text-md-right" for="aptTime"
           >Time</label
         >
         <div class="col-md-4">
-          <input type="time" class="form-control" name="aptTime" id="aptTime" />
+          <input type="time" class="form-control" name="aptTime" id="aptTime" ngModel>
         </div>
         <!-- col-md-4 -->
       </div>
@@ -67,7 +74,7 @@
             cols="50"
             name="aptNotes"
             id="aptNotes"
-            placeholder="Appointment Notes"
+            placeholder="Appointment Notes" ngModel
           ></textarea>
         </div>
         <!-- col-md-10 -->
